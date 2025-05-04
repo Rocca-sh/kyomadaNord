@@ -1,0 +1,45 @@
+*{
+    border-radius: 5px;
+    border: none;
+    font-family: 'Roboto Mono Meduim';
+}
+
+window{
+    font-size: 20px;
+    background-color: #16161e ;
+}
+
+#entry{
+    padding: 0.25em;
+    color: #e6e7ed;
+}
+
+#entry:selected {
+    background-color:#e6e7ed;
+    color: #16161e;
+}
+
+#text:selected {
+    color: #16161e;
+}
+
+#input{
+    background-color: #1a1b26;
+    color: #e6e7ed;
+    padding: 0.25em;
+    margin: 10px 15px 5px 15px;
+}
+
+#inner-box{
+    margin: 15px;
+    background-color: #1a1b26;
+}
+
+#outer-box {
+    border-bottom: 10px solid #16161e;
+} 
+
+image{
+    margin-left: .25em;
+    margin-right: .25em;
+}

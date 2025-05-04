@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    border-radius: 10;
+    min-height: 0;
+    margin: 0;
+    border: none;
+    text-shadow: none;
+    transition: none;
+    box-shadow: none;
+    font-family: jetbrains,Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /* the whole window */
+  window#waybar {
+    background: #16161e;
+    color: #fff4d2;
+    padding: 0px 5px;
+    margin: 0 0 5px;
+  }
+  
+  .modules-left {
+    padding-left: 5px;
+  }
+  
+  .modules-right {
+    padding-right: 5px;
+  }
+  
+  #custom-rofi,
+  #workspaces button,
+  #workspaces button:hover,
+  #workspaces button.visible,
+  #workspaces button.visible:hover,
+  #workspaces button.active,
+  #workspaces button.active:hover,
+  #workspaces button.urgent,
+  #window,
+  #tray,
+  #disk,
+  #cpu,
+  #temperature,
+  #temperature.critical,
+  #backlight,
+  #custom-memory,
+  #pulseaudio,
+  #pulseaudio.muted,
+  #battery,
+  #battery.critical,
+  #battery.warning,
+  #clock {
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-size: 14px;
+    font-weight: 400;
+    color: #16161e;
+    background: #16161e;
+    border-radius: 2px;
+  }
+  
+  #window,
+  #tray,
+  #disk,
+  #cpu,
+  #temperature,
+  #temperature.critical,
+  #backlight,
+  #custom-memory,
+  #pulseaudio,
+  #pulseaudio.muted,
+  #battery,
+  #battery.critical,
+  #battery.warning,
+  #clock {
+    padding-right: 4px;
+    margin: 5px 0px;
+  }
+  
+  #custom-rofi {
+    /* border: 2px solid #458588; */
+     border-radius: 5px; 
+    padding: 0 6px;
+    margin: 5px 0px;
+  }
+
+  #custom-rofi1{
+    /* border: 2px solid #458588; */
+    border-radius: 5px; 
+    padding: 0 10px 0 7px;
+    margin: 5px 0px;
+  }
+  
+  /* ================================ */
+  /*       workspaces module          */
+  /* ================================ */
+  #workspaces {
+    margin: 0px;
+  }
+  
+  #workspaces button {
+    color: #fff4d2;
+    background: #1a1b35;
+    /* border: 2px solid #fff4d2; */
+    min-width: 25px;
+    padding: 0 4px;
+    margin: 5px 3px;
+  }
+  
+  #workspaces button:hover {
+    background: #1a1b35;
+  }
+  
+  #workspaces button.visible {
+    background: #1a1b35;
+  }
+  
+  #workspaces button.visible:hover {
+    background: #1a1b35;
+  }
+  
+  #workspaces button.active {
+    background: #1a1b35;
+  }
+  
+  #workspaces button.active:hover {
+    background: #1a1b35;
+  }
+  
+  #workspaces button.urgent {
+    border: 2px solid #cc241d;
+    background: #ea6962;
+  }
+  
+  /* ================================ */
+  /*            window                 */
+  /* ================================ */
+  
+  #window {
+    border-radius: 5px;
+    background: #1a1b35;
+    padding: 5px 50px;
+    margin: 5px 3px;
+    color: #e6e7ed;
+  }
+  
+  /* ================================ */
+  /*            tray                 */
+  /* ================================ */
+  
+  #tray {
+    /* padding: 0 6px; */
+    background: #1a1b35;
+  }
+  
+  /* ================================ */
+  /*            disk                 */
+  /* ================================ */
+  
+  #disk {
+    color: #ea6962;
+    border: 2px solid #ea6962;
+  }
+  
+  /* ================================ */
+  /*            cpu                  */
+  /* ================================ */
+  #cpu {
+    color: #e6e7ed;
+    background: #1a1b35;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+  
+  /* ================================ */
+  /*            temp                  */
+  /* ================================ */
+  #temperature {
+    color: #d8a657;
+    border: 2px solid #d8a657;
+  }
+  
+  #temperature.critical {
+    color: #cc241d;
+    border: 2px solid #cc241d;
+  }
+  
+  /* ================================ */
+  /*            backlight             */
+  /* ================================ */
+  #custom-backlight {
+    color: #f6c657;
+    background: #1a1b35;
+  }
+  
+  /* ================================ */
+  /*            memory                */
+  /* ================================ */
+  #custom-memory {
+    color: #458588;
+    border: 2px solid #458588;
+  }
+  
+  /* ================================ */
+  /*         pulseaudio               */
+  /* ================================ */
+  #pulseaudio {
+    color: #e6e7ed;
+    background: #1a1b35;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+  
+  #pulseaudio.muted {
+    color: #f7768e;
+    background: #1a1b35;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+  
+  /* ================================ */
+  /*            battery               */
+  /* ================================ */
+  #battery {
+    color: #fbf1c7;
+    background: #1a1b35;
+  }
+  
+  #battery.critical {
+    color: #cc241d;
+    background: #1a1b35;
+  }
+  
+  #battery.warning {
+    color: #e78a4e;
+    background: #1a1b35;
+  }
+  /* ================================ */
+  /*            clock                 */
+  /* ================================ */
+  #clock.time {
+    color: #e6e7ed;
+    background: #1a1b35;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  #clock.date {
+    color: #fbf1c7;
+    background: #1a1b35;
+  }
+  
+  #mpris {
+    border-radius: 21px;
+    background: #1a1b35;
+    padding: 5px 100px;
+    margin: 1px 1px; 
+
+    color: #fbf1c7;
+  }
+  
+  
+  #custom-notification {
+    color: #fbf1c7;
+    font-size: 14px;
+    background: #3c3835;
+    padding: 2px 2px;
+  }

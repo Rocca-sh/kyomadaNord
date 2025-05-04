@@ -1,0 +1,142 @@
+/* -*- css -*- */
+
+/* --- Estilo General de la Barra --- */
+window#waybar {
+    font-family: "JetBrainsMono Nerd Font", monospace; /* Asegúrate de tener esta fuente */
+    font-size: 14px;
+    background-color: rgba(46, 52, 64, 0); /* Fondo oscuro semi-transparente */
+    border-radius: 50px;
+    color: #ECEFF4; /* Texto claro */
+    border-radius: 15px; /* Redondez de la barra */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* --- Estilo General de Módulos --- */
+
+#mode,
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#custom-eww-toggle,
+#window {
+    background-color: rgba(49, 50, 68, 0.9); /* Fondo de módulo */
+    border-radius: 10px; /* Redondez de módulo */
+    padding: 0px 15px; /* Relleno horizontal */
+    margin: 3px 4px; /* Margen vertical y horizontal */
+}
+
+
+#custom-volume
+{
+    background-color: rgba(49, 50, 68, 0.9); /* Fondo de módulo */
+    border-radius: 10px; /* Redondez de módulo */
+    padding: 0px 5px; /* Relleno horizontal */
+    margin: 3px 4px; /* Margen vertical y horizontal */
+}
+
+#workspaces{
+    background-color: rgba(49, 50, 68, 0.9); /* Fondo de módulo */
+    border-radius: 10px; /* Redondez de módulo */
+    margin: 3px 4px; /* Margen vertical y horizontal */
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 3px;
+    min-width: 25px;
+    color: #ECEFF4;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: #5E81AC;
+    color: #5E81AC;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.active {
+    padding:5px;
+    color: #5E81AC; /* Texto oscuro sobre fondo activo (ajustado) */
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8; /* Color urgente */
+    color: #1e1e2e; /* Texto oscuro (ajustado) */
+}
+
+/* Título de Ventana */
+#window {
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+/* Módulos de Sistema */
+#temperature.critical {
+    background-color: #f38ba8; /* Color crítico */
+    color: #1e1e2e; /* Texto oscuro (ajustado) */
+}
+
+/* Red */
+#network.disconnected {
+    background-color: #313244; /* Fondo más oscuro para desconectado (ajustado) */
+}
+
+
+#tray {
+    background-color: transparent;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f38ba8; /* Color atención */
+}
+
+/* Botón Personalizado Eww */
+#custom-eww-toggle {
+    padding: 0 12px;
+}
+#custom-eww-toggle:hover {
+     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tooltips */
+tooltip {
+    background-color: #313244; /* Fondo tooltip (ajustado) */
+    border: 1px solid #fab387; /* Borde tooltip */
+    border-radius: 5px; /* Redondez tooltip */
+    padding: 8px;
+    color: #cdd6f4; /* Texto tooltip */
+}
+
+tooltip label {
+    padding: 4px;
+    color: #cdd6f4; /* Texto tooltip */
+}
+
+#custom-rofi {
+    background-color: rgba(49, 50, 68, 0.9); /* Fondo de módulo */
+    color: #ECEFF4;
+    border-radius: 10px; 
+    padding: 4px 7px 4px 7px;
+    margin: 5px 0px;
+  }
+
+  #custom-rofi1{
+    background-color: rgba(49, 50, 68, 0.9); /* Fondo de módulo */
+    border-radius: 10px; 
+    color: #BF616A;
+    padding: 4px 10px 4px 7px;
+    margin: 5px 0px;
+  }

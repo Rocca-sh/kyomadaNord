@@ -1,0 +1,43 @@
+/* Archivo: colorsNord.css */
+/* Definiciones de la paleta Nord */
+@define-color nord0  #2E3440; /* Polar Night - Darkest */
+@define-color nord1  #3B4252; /* Polar Night */
+@define-color nord2  #434C5E; /* Polar Night */
+@define-color nord3  #4C566A; /* Polar Night - Lightest */
+@define-color nord4  #D8DEE9; /* Snow Storm - Darkest */
+@define-color nord5  #E5E9F0; /* Snow Storm */
+@define-color nord6  #ECEFF4; /* Snow Storm - Lightest */
+@define-color nord7  #8FBCBB; /* Frost - Teal/Cyan */
+@define-color nord8  #88C0D0; /* Frost - Light Blue */
+@define-color nord9  #81A1C1; /* Frost - Blue */
+@define-color nord10 #5E81AC; /* Frost - Darker Blue */
+@define-color nord11 #BF616A; /* Aurora - Red */
+@define-color nord12 #D08770; /* Aurora - Orange */
+@define-color nord13 #EBCB8B; /* Aurora - Yellow */
+@define-color nord14 #A3BE8C; /* Aurora - Green */
+@define-color nord15 #B48EAD; /* Aurora - Purple */
+
+/* Mapeo de colores Nord a variables usadas en Waybar */
+@define-color background @nord0;  /* Fondo principal (muy oscuro) */
+@define-color foreground @nord6;  /* Texto principal (muy claro) */
+@define-color color1 @nord11; /* Rojo (Urgente) */
+@define-color color2 @nord14; /* Verde */
+@define-color color3 @nord13; /* Amarillo */
+@define-color color4 @nord9;  /* Azul (para botón OS) */
+@define-color color5 @nord8;  /* Azul claro (Workspaces inactivos, botón Power) */
+@define-color color6 @nord7;  /* Teal/Cyan (Workspaces activos) */
+
+$bg: #2E3440;
+$bg-alt: #3B4252;
+$fg: #ECEFF4;
+$black: #434C5E;
+$lightblack: #4C566A;
+$red: #BF616A;
+$blue: #81A1C1;
+$cyan: #8FBCBB;
+$magenta: #B48EAD;
+$green: #A3BE8C;
+$yellow: #e0af68;
+$archicon: #5E81AC;
+
+

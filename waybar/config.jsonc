@@ -1,0 +1,185 @@
+{
+  // Capa y Posición
+  "layer": "top",
+  "position": "top",
+  "height": 38, // Ajusta la altura si es necesario
+  "spacing": 8, // Espaciado entre módulos
+  "margin-top": 5, // Margen superior (ajusta para separar del borde)
+  "margin-bottom": 0,
+  "margin-left": 10, // Márgenes laterales
+  "margin-right": 10,
+
+  "modules-left": [
+  ],
+
+  // Módulos Centro
+  "modules-center": [
+        "custom/rofi",
+       "custom/volume",
+       "hyprland/workspaces",
+       "clock",
+       "custom/rofi1"
+  ],
+
+  "modules-right": [
+  
+     
+  ],
+
+  "custom/rofi": {
+		"format": "<span >\uebc6 \udb80\uddd9</span>",
+		"on-click": "wofi --show drun",
+    "escape" : true,
+    "tooltip" : false
+	},
+
+  "custom/rofi1": {
+		"format": "<span>\uf011</span>",
+		"on-click": "wlogout --show drun",
+    "escape" : true,
+    "tooltip" : false
+	},
+
+  // --- Configuraciones Individuales de Módulos ---
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "<span>\uf192</span>",
+      "2": "<span>\uf192</span>",
+      "3": "<span>\uf192</span>",
+      "4": "<span>\uf192</span>",
+      "5": "<span>\uf192</span>",//discord
+      "6": "<span>\uf192</span>",//spoty
+      "7": "<span\uf192</span>",//steam
+      "8": "<span>\uf192</span>",//recorder 
+      "9": "<span>\uf192</span>",//recorder 
+      "10": "<span>\uf192</span>",//recorder 
+    },
+    "persistent-workspaces": {
+      "*": 5
+  }
+  },
+  "hyprland/window": {
+      "format": "{}", // Muestra solo el título
+      "max-length": 50, // Limita la longitud del título
+      "rewrite": { // Opcional: reescribe títulos específicos
+          //"(.*) — Firefox": "$1",
+          //"(.*) - VSCodium": "$1"
+      }
+  },
+
+  "custom/eww-toggle": {
+      "format": "󰤢", // Elige tu icono (Nerd Font recomendado)
+      "tooltip": false,
+      "on-click": "~/.config/eww/scripts/toggle_sysmenu.sh" // ¡¡AJUSTA LA RUTA A TU SCRIPT!!
+  },
+
+  "tray": {
+      "icon-size": 18,
+      "spacing": 10
+  },
+
+  "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon<X>/temp1_input", // ¡¡NECESITAS ENCONTRAR Y AJUSTAR ESTA RUTA!! (Busca con 'find /sys/class/hwmon -name temp*_input')
+      "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["󰈸", "󰈸"], // Icono normal y crítico (puedes usar más si quieres)
+      "tooltip": true
+  },
+
+  "memory": {
+      "interval": 5,
+      "format": " {}%", // Icono RAM + Porcentaje
+      //"format": " {used:0.1f}G/{total:0.1f}G", // Alternativa: Usado/Total GiB
+      "tooltip": true,
+      "tooltip-format": "Memoria: {used:0.1f}GB / {total:0.1f}GB ({perc}%)"
+  },
+
+  "cpu": {
+      "interval": 2,
+      "format": "󰻠 {usage}%", // Icono CPU + Porcentaje
+      "tooltip": true,
+      "tooltip-format": "CPU: {usage}% | Freq: {avg_frequency}GHz"
+  },
+
+  "network": {
+      "interface": "wlan0", // ¡¡AJUSTA A TU INTERFAZ WIFI (e.g., wlpXsY) O ETH (e.g., enoX)!! (Usa 'ip link' para ver interfaces)
+      "format-wifi": "{icon} {signalStrength}%", // Icono + Señal %
+      "format-ethernet": "󰈀 Conectado", // Icono Ethernet
+      "format-disconnected": "󰖪 Desconectado",
+      "format-icons": ["󰖩", "󰖩", "󰖩", "󰖩", "󰖩"], // Iconos para diferentes niveles de señal wifi (ajusta si quieres)
+      "tooltip-format-wifi": "SSID: {essid}\nSeñal: {signalStrength}% ({frequency} GHz)\nIP: {ipaddr}/{cidr}",
+      "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+      "tooltip-format-disconnected": "Red Desconectada",
+      "on-click": "nm-connection-editor" // Abre el editor de redes (si usas NetworkManager)
+  },
+
+  "pulseaudio": {
+        // "scroll-step": 5, // Mantén esto si lo usas
+        // Cambia el formato para mostrar SOLO el icono (que será nuestra barra)
+        "format": "{icon}",
+        // Mantenemos un formato específico para cuando está silenciado
+        "format-muted": "󰖁 Silenciado", // O solo "󰖁" si prefieres
+        "format-icons": {
+            // Mantén iconos específicos si los usas (auriculares, etc.)
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            // ... otros iconos específicos ...
+
+            // Aquí definimos la barra usando caracteres de bloque para los niveles de volumen
+            // El array 'default' ahora representa niveles de volumen de bajo a alto
+            // Necesitas una fuente que soporte estos caracteres (Nerd Fonts suelen funcionar bien)
+            "default": [
+                " ", // Nivel 0% (o casi)
+                "▂", // Nivel 1-25%
+                "▄", // Nivel 26-50%
+                "▆", // Nivel 51-75%
+                "█"  // Nivel 76-100%
+            ]
+        },
+        "tooltip": true, // Mantenemos el tooltip para ver el % exacto si pasas el ratón
+        "tooltip-format": "{icon} Volumen: {volume}%", // El tooltip puede mostrar icono y %
+        "on-click": "pavucontrol" // O el comando que uses para abrir controles/mutear
+        // "on-click-middle": "wpctl set-sink-mute @DEFAULT_AUDIO_SINK@ toggle", // Ejemplo para mutear con clic central
+    },
+
+    "custom/volume": {
+        "format": "󰕾 {}", // Icono + Salida del script (la barra)
+        // "format": "{}", // O solo la barra si prefieres
+        "exec": "~/.config/waybar/scripts/volumen.sh", // Ruta a tu script
+        "interval": 1, // Cada cuántos segundos actualizar (1 o 2 está bien)
+        "tooltip": true, // Habilita tooltip (requiere adaptar script o usar exec-tooltip)
+        // Opcional: Añade tooltip que muestre el % exacto
+        "exec-tooltip": "wpctl get-volume @DEFAULT_SINK@", // O pactl/amixer. Muestra el volumen exacto al pasar el ratón
+        // Añade interactividad de vuelta (ajusta comandos a tu sistema de audio)
+        "on-click": "wpctl set-sink-mute @DEFAULT_SINK@ toggle", // Ejemplo: Mute/Unmute
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",   // Ejemplo: Subir volumen
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-" // Ejemplo: Bajar volumen
+    },
+
+    "custom/cava-bar": {
+        "format": "{}", 
+        "exec": "~/.config/waybar/scripts/cava_bar.sh", 
+        "interval": 0.05, 
+        "tooltip": false,   
+        "max-length": 150 
+    },
+
+    "custom/cpu-bar": {
+        "format": "󰻠 {}", // Icono de CPU + Salida del script (la barra)
+        "exec": "~/.config/waybar/scripts/cpubar.sh", // Ruta al script
+        "interval": 2, // Actualizar cada 2 segundos
+        "tooltip": true, // Habilitar tooltip
+        // Tooltip que muestra el porcentaje exacto (usa el mismo comando que el script para consistencia)
+        "exec-tooltip": "echo \"CPU: $(mpstat 1 1 | awk '/Average:/ {printf \\\"%.0f%%\\\", 100 - $12}')\"",
+        // Opcional: Acción al hacer clic (ej: abrir htop)
+        "on-click": "kitty -e htop" // Cambia 'kitty' por tu terminal preferida
+    },
+
+  "clock": {
+      "format": " {:%H:%M}", // Icono reloj + Hora:Minuto
+      "tooltip-format": "<big>{:%A, %d de %B de %Y}</big>\n<tt>{time}</tt>" // Tooltip con fecha completa
+  }
+}
