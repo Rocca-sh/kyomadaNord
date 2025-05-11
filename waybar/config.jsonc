@@ -22,12 +22,12 @@
   ],
 
   "modules-right": [
-  
-     
+    "tray"
   ],
 
+
   "custom/rofi": {
-		"format": "<span >\uebc6 \udb80\uddd9</span>",
+		"format": "<span >\uebc6</span>",
 		"on-click": "wofi --show drun",
     "escape" : true,
     "tooltip" : false
@@ -77,6 +77,8 @@
 
   "tray": {
       "icon-size": 18,
+      "show-passive-items": true,
+      "expand": true, 
       "spacing": 10
   },
 
