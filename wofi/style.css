@@ -1,6 +1,7 @@
 *{
     border-radius: 5px;
     border: none;
+	all: unset;
     font-family: 'Roboto Mono Meduim';
 }
 
@@ -25,14 +26,14 @@ window{
 
 #input{
     background-color: #3B4252;
-    color: #ECEFF4;
+   /* color: #ECEFF4;*/
     padding: 0.25em;
     margin: 10px 15px 5px 15px;
 }
 
 #inner-box{
     margin: 15px;
-    background-color: #3B4252;
+   background-color: #3B4252;
 }
 
 #outer-box {

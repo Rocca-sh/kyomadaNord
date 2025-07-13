@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directorio de las imágenes
-WALLPAPER_DIR="$HOME/wp1"
+WALLPAPER_DIR="/home/h1t/KyomadaNord/wp1"
 # Archivo para guardar el índice del último wallpaper usado
 # Se guardará en el directorio HOME del usuario como un archivo oculto
 STATE_FILE="$HOME/.current_wallpaper_idx"
